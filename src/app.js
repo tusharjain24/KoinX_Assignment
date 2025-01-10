@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import { expressLimit } from "./constants.js";
 import { rateLimit } from "express-rate-limit";
+import {healthCheckRouter} from "./routes/healthcheck.route.js";
 
 const app = express();
 
@@ -24,5 +25,6 @@ app.use(express.json({ limit: expressLimit }));
 app.use(express.urlencoded({ extended: true, limit: expressLimit }));
 app.use(express.static("public"));
 
+app.use("/api/v1/healthcheck", healthCheckRouter);
 
 export { app };
