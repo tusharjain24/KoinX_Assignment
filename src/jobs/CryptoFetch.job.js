@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Crypto from '../models/Crypto.model.js';
 
 const fetchCryptoData = async () => {
   try {

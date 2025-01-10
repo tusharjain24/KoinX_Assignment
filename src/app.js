@@ -4,6 +4,7 @@ import { expressLimit } from "./constants.js";
 import { rateLimit } from "express-rate-limit";
 import {healthCheckRouter} from "./routes/healthcheck.routes.js";
 import {cryptoRouter} from "./routes/crypto.routes.js";
+import job from "./jobs/scheduleJob.js";
 
 const app = express();
 
@@ -26,8 +27,11 @@ app.use(express.json({ limit: expressLimit }));
 app.use(express.urlencoded({ extended: true, limit: expressLimit }));
 app.use(express.static("public"));
 
+job.invoke();
+
 app.use("/api/v1/healthcheck", healthCheckRouter);
-app.use("api/v1/crypto", cryptoRouter);
+app.use("/api/v1/crypto", cryptoRouter);
 
 
 export { app };
+
