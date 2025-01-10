@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import { expressLimit } from "./constants.js";
 import { rateLimit } from "express-rate-limit";
-import {healthCheckRouter} from "./routes/healthcheck.route.js";
+import {healthCheckRouter} from "./routes/healthcheck.routes.js";
 
 const app = express();
 
