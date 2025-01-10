@@ -1,9 +1,11 @@
-import Crypto from '../models/Crypto.js';
+import Crypto from '../models/Crypto.model.js';
 import { ApiError } from '../utils/ApiError.util.js';
-import { ApiResponse } from '../utils/ApiError.util.js';
-import { standardDeviation } from '../utils/helpers.js';
+import { ApiResponse } from '../utils/ApiResponse.util.js';
+import { standardDeviation } from '../utils/Helper.util.js';
+import { asyncHandler } from '../utils/AsyncHandler.util.js';
 
-export const getCryptoStats = async (req, res, next) => {
+
+export const getCryptoStats = asyncHandler(async (req, res, next) => {
   try {
     const { coin } = req.query;
     if (!coin) {
@@ -24,10 +26,10 @@ export const getCryptoStats = async (req, res, next) => {
   } catch (error) {
     next(error);
   }
-};
+});
 
 
-export const getCryptoDeviation = async (req, res, next) => {
+export const getCryptoDeviation = asyncHandler(async (req, res, next) => {
   try {
     const { coin } = req.query;
     if (!coin) {
@@ -47,4 +49,5 @@ export const getCryptoDeviation = async (req, res, next) => {
   } catch (error) {
     next(error);
   }
-};
+});
+
