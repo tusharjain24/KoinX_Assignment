@@ -76,6 +76,8 @@ Postman API Screenshot: Get Coin Stats![alt text](image.png)
 
 
 - [Click here to view Postman's API collection Documentation](https://www.postman.com/lms999-9748/koinx/documentation/yenta2z/koinx)
+- Make sure to select `KoinX` environment in the collection Documentation.
+- [Link to the Collection](https://www.postman.com/lms999-9748/koinx/collection/yenta2z/koinx?action=share&source=copy-link&creator=0&active-environment=4b2a62dd-45ed-4462-bbc2-41e57f25bde6)
  
 
 ## API Reference
